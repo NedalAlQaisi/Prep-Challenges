@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function equalizeArray(arr) {\n\n    let sumEqualize = 0;\n\n    let arrObj = {};\n\n    for (let num of arr) {\n        arrObj[num] = arrObj[num] + 1 || 1;\n        }\n  \n  for (let value in arrObj) {\n\n  if (arrObj[value] > sumEqualize) {\n      \n    sumEqualize = arrObj[value];\n  }\n}\nreturn (arr.length - sumEqualize);\n}\n"
             ],
             "outputs": []
         },
