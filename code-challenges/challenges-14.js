@@ -56,7 +56,25 @@ const LastWord_2 = (str) => {
 // ------------------------
 
 const replaceWords = (str) => {
-    // write your code here
+
+    let subVtoBe = str.split(" ");
+
+    // If the array contains the word "I", replace it with "We".
+    if (subVtoBe.indexOf("I") != -1) {
+        subVtoBe.splice(subVtoBe.indexOf("I"), 1, "We");
+    }
+
+    // If the array contains the word "was", replace it with "were".
+    if (subVtoBe.indexOf("was") != -1) {
+        subVtoBe.splice(subVtoBe.indexOf("was"), 1, "were");
+    }
+
+    // If the array contains the word "am", replace it with "are".
+    if (subVtoBe.indexOf("am") != -1) {
+        subVtoBe.splice(subVtoBe.indexOf("am"), 1, "are");
+    }
+
+    return subVtoBe.join(" ");
 }
 
 // 4) ---------------------
@@ -67,7 +85,10 @@ const replaceWords = (str) => {
 // ------------------------
 
 const arrToStr = (arr) => {
-    // write your code here
+
+    arr.splice(4, 1, `${arr[4]},`);
+
+    return arr.join(" ");
 }
 
 // 5) ---------------------
