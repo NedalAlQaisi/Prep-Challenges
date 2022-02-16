@@ -15,7 +15,12 @@
 //
 
 const wordLength = (str) => {
-    // write your code here
+
+    let secStr = str.split(" ")
+    let wordSite = Math.floor(secStr.length / 2);
+    let lenWord = secStr[wordSite].length
+
+    return lenWord;
 }
 // -------------------------------------------------------------------------------------------------------
 
