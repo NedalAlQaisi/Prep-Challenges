@@ -16,8 +16,31 @@
 
 const recursionPattern = (int1, int2) => {
 
+    //    The Pattern is [No1, n0(No1 - No2), n1(n0 - No2) ==> for (Negative Number) ==> Process Reflection] 
+    var x = int1;
+    var y = int2;
+    var sequence = [];
 
+    function pattern(x, y, sequence) {
 
+        sequence.push(x);
+
+        if (x < 0) {
+
+            let int = sequence.length - 2;
+
+            while (int >= 0) {
+
+                let numBer = sequence[int];
+
+                sequence.push(numBer);
+                int--;
+            }
+            return sequence;
+        }
+        return pattern(x - y, y, sequence);
+    }
+    return pattern(int1, int2, sequence);
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -37,8 +60,17 @@ const recursionPattern = (int1, int2) => {
 
 const filterLinks = (str) => {
 
+    let regexUrl = new RegExp(
 
+        // /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi
 
+        /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi
+
+    );
+
+    let url = str.match(regexUrl);
+
+    return url.join("");
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -66,9 +98,9 @@ const isPalindrome = (str) => {
 
     if (lowerStr === check_palindrome) {
         return true
-    }else{
+    } else {
         return false
-    } 
+    }
 }
 // -------------------------------------------------------------------------------------------------------
 
